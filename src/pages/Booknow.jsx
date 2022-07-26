@@ -144,7 +144,7 @@ export default class Booknow extends Component {
                             <p className="lead">Your room is booked successfully....</p>
                         </div>
                         <div className="modal-footer">
-                            <Link to="/" className="btn btn-dark">Goto Home</Link>
+                            <Link to="/" className="btn btn-dark">Go to Home</Link>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>

@@ -25,7 +25,7 @@ export default class SingleRoom extends Component {
                                 <h1 className="text-center display-4">SORRY</h1>
                                 <h3>No such room could be found...</h3>
                                 <Link to="/rooms" className="btn btn-warning mt-4 ">Back to Rooms</Link>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>);
