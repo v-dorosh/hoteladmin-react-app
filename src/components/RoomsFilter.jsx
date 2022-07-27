@@ -11,7 +11,7 @@ return [...new Set(items.map(item => item[value]))]
 export default function RoomsFilter({rooms}) {
     const context = useContext(RoomContext);
     const {
-      handleChange, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets
+        handleChange, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets
     } = context;
 
     //get unique type

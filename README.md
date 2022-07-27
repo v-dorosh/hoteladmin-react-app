@@ -1,6 +1,7 @@
 # Hotel Management App
 
-## Edvantis trainsheep summer program 2022
+***Edvantis trainsheep summer program 2022***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

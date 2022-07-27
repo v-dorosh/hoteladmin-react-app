@@ -1,7 +1,5 @@
 import React from 'react'
-import { FaFacebookSquare, FaLinkedin } from 'react-icons/fa';
-import { IoLogoYoutube } from 'react-icons/io';
-import { AiFillInstagram } from 'react-icons/ai';
+import { FaFacebookSquare, FaLinkedin, AiFillInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -13,14 +11,12 @@ const Footer = () => {
                     </div>
                     <div className="col-md-6 col-12">
                         <div className="d-flex float-right">
-                            <a href="https://www.facebook.com/">
+                            <a href="https://www.facebook.com/dorosh.v/">
                                 <FaFacebookSquare className="connect text-dark" /></a>
-                            <a href="https://www.linkedin.com/">
+                            <a href="https://www.linkedin.com/in/vitaliy-dorosh-22817036/">
                                 <FaLinkedin className="connect text-dark" /></a>
-                            <a href="https://www.instagram.com/">
+                            <a href="https://www.instagram.com/vido88/">
                                 <AiFillInstagram className="connect text-dark" /></a>
-                            <a href="https://www.youtube.com/">
-                                <IoLogoYoutube className="connect text-dark" /></a>
                         </div>
                     </div>
                 </div>

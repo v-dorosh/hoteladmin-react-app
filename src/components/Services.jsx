@@ -30,16 +30,16 @@ export default class Services extends Component {
     render() {
         return (
             <div className="container-fluid services">
-              <Title title="Services" />
+                <Title title="Services" />
                 <div className="row">
                     {this.state.services.map((item, index) => {
-                      return(
+                    return(
                         <div className="col-md-4 col-lg-3 col-12 mx-auto my-3" key = { index }>
                             <div className="card shadow-lg border-0 p-4">
                                 <article className="service">
-                                  <span>{ item.icon }</span>
-                                  <h6>{ item.title }</h6>
-                                  <p>{ item.info }</p>
+                                    <span>{ item.icon }</span>
+                                    <h6>{ item.title }</h6>
+                                    <p>{ item.info }</p>
                                 </article>
                             </div>
                         </div>

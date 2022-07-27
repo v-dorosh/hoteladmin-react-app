@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaAlignRight } from 'react-icons/fa';
-import jquery from 'jquery';
+//import jquery from 'jquery';
 
 // for changing navbar color
-jquery(window).scroll(function() {
-jquery('nav').toggleClass('scrolled', jquery(this).scrollTop() > 0);
-})
+// jquery(window).scroll(function() {
+// jquery('nav').toggleClass('scrolled', jquery(this).scrollTop() > 0);
+// })
 
 const Navbar = () => {
     return (

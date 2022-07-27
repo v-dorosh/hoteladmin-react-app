@@ -1,10 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
+import './index.css'
+import * as serviceWorker from './serviceWorker';
+import {RoomProvider} from './context'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <RoomProvider>
+     <App />
+  </RoomProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
+
+serviceWorker.unregister();
