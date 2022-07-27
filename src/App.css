@@ -185,7 +185,7 @@ box-shadow: inset 0 -1px 0 #ddd;
   min-height: calc(100vh - 0px);
 }
 .singleRoom {
-  background-image: url("./images/room-3.jpeg");
+  background-image: url("./images/room-3.jpg");
   min-height: calc(100vh - 0px);
 }
 .roomsError{

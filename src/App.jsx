@@ -1,9 +1,9 @@
 import React from 'react';
 //import UserCards from './components/UserCards';
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import SingleRoom from './pages/SingleRoom';
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar/>
-        <Switch>
+        <Routes>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/rooms/:slug" component={SingleRoom} />
           <Route exact path="/booknow/:slug" component={Booknow} />
           <Route component={Error}/>
-        </Switch>
+        </Routes>
         <Footer/>
       </BrowserRouter>
     </div>

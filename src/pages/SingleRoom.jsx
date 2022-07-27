@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import defaultBcg from '../images/room-3.jpeg';
+import defaultBcg from '../images/room-3.jpg';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from '../context';
@@ -35,7 +35,7 @@ export default class SingleRoom extends Component {
         return (
             <>
             <StyledHero img={mainImg || this.state.defaultBcg }>
-           
+
             <Banner title={`${name} room`}>
                     <Link to="/rooms" className="btn btn-primary">Back To Rooms</Link>
             </Banner>

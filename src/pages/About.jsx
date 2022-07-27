@@ -3,6 +3,7 @@ import { FaFacebookSquare, FaLinkedin } from 'react-icons/fa';
 import { IoLogoYoutube } from 'react-icons/io';
 import { AiFillInstagram } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+
 function About() {
     return (
     <div className="container aboutus">

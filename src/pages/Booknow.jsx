@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import defaultBcg from '../images/room-3.jpeg';
+import defaultBcg from '../images/room-3.jpg';
 export default class Booknow extends Component {
     constructor (props){
         super(props);
