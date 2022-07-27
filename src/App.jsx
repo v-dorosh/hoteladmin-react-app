@@ -1,7 +1,6 @@
 import React from 'react';
 //import UserCards from './components/UserCards';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
