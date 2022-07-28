@@ -1,22 +1,26 @@
-import React from 'react'
-import Hero from '../components/Hero';
-import Banner from '../components/Banner';
-import { Link } from 'react-router-dom';
-import Services from '../components/Services';
-import FeaturedRooms from '../components/FeaturedRooms';
-
-export default function Home() {
-    return (
-        <>
-        <Hero hero="defaultHero">
-        </Hero>
-        <Banner title="Luxurious Rooms" subtitle="deluxe rooms starting at 300$">
-          <Link to="/rooms" className="btn btn-primary">
-            Our Rooms
+import React from "react";
+import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
+import Banner from "../components/Banner";
+import Services from "../components/Services";
+import FeaturedRooms from "../components/FeaturedRooms";
+const home = () => {
+  return (
+    <>
+      <Hero>
+        <Banner
+          title="luxurious rooms"
+          subtitle="deluxe rooms starting at $299"
+        >
+          <Link to="/rooms" className="btn-primary">
+            our rooms
           </Link>
         </Banner>
-        <Services/>
-        <FeaturedRooms/>
-        </>
-    )
-}
+      </Hero>
+      <Services />
+      <FeaturedRooms />
+    </>
+  );
+};
+
+export default home;

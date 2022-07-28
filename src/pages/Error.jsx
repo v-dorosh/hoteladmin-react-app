@@ -1,19 +1,17 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Banner from '../components/Banner';
-import { Link } from 'react-router-dom';
-import { FaRegMeh } from 'react-icons/fa';
+import React from "react";
+import Hero from "../components/Hero";
+import Banner from "../components/Banner";
+import { Link } from "react-router-dom";
+const Error = () => {
+  return (
+    <Hero>
+      <Banner title="404" subtitle="page not found">
+        <Link to="/" className="btn-primary">
+          return home
+        </Link>
+      </Banner>
+    </Hero>
+  );
+};
 
-export default function Error() {
-    return (
-        <>
-        <Hero hero="roomsError" />
-        <Banner title="ERROR 404 NOT FOUND" subtitle="Ooops...">
-                <FaRegMeh className="lost"></FaRegMeh>
-                <Link to="/" className="btn btn-warning">
-                    RETURN HOME
-                </Link>
-        </Banner>
-        </>
-    )
-}
+export default Error;
