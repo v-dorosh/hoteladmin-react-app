@@ -1,6 +1,6 @@
 # Hotel Management App
 
-***Edvantis trainsheep summer program 2022***
+***Edvantis internship summer program 2022***
 
 # Getting Started with Create React App
 

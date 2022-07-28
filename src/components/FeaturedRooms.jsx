@@ -5,6 +5,7 @@ import Room from "./Room";
 import Loading from "./Loading";
 
 export default class FeaturedRooms extends Component {
+  
   static contextType = RoomContext;
 
   render() {
