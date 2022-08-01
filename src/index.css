@@ -1,14 +1,106 @@
+/*/body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
-  }
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: 300 !important;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #f1f5fb;
+}
+.card {
+  min-height: 200px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 #ccd0d9;
+  cursor: pointer;
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  background-color: #f2f2f2;
+  transform: translateY(-4%);
+}
+.card-link {
+  width: fit-content;
+  align-self: end;
+  background: none;
+  border: none;
+}
+
+.card-link a {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+}
+.card-link a:before {
+  content: "";
+  position: absolute;
+  transition: transform 0.5s ease;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #6667AB;
+  transform: translateX(-100%);
+}
+
+.card-link a:hover:before {
+  transform: translateX(0);
+}
+.profile-card-img {
+  width: 175px;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+  box-shadow: 0px 5px 50px 0px #b9bfc9, 0px 0px 0px 7px rgb(107 74 255 / 50%);
+}
+.profile-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile p {
+  align-self: flex-start;
+}
+.profile span {
+  background: #eee;
+  margin: 0 20px 0 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+ul {
+  list-style: none;
+}
+
+.return-link {
+  background: none;
+  border: none;
+}
+
+.return-link:hover {
+  color: #abaa66;
+}
