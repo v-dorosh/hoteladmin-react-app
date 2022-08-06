@@ -104,3 +104,7 @@ ul {
 .return-link:hover {
   color: #abaa66;
 }
+
+.dropdown-container {
+  margin-bottom: 1.5em;
+}
