@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../store/actions/usersActions";
-//import { getUserById } from "../store/actions/userActions";
 import UserItems from "./UserItems";
 import ReactLoading from "react-loading";
 import { CSVLink } from "react-csv";
 import Select from "react-select";
+import Button from '@mui/material/Button';
 
 const UsersList = () => {
   const listOfUsers = useSelector((state) => state.users.users);
   const done = useSelector((state) => state.users.loading);
-  //console.log(listOfUsers);
+
   const dispatch = useDispatch();
 
-  // const [users, setUsers] = useState([])
-  // const [searchResults, setSearchResults] = useState([])
-
-  //const [selectedOption, setSelectedOption] = useState(null);
   const [filteredUsers, setFilteredUsers] = useState([]);
-
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +24,6 @@ const UsersList = () => {
   useEffect(() => {
     setFilteredUsers(listOfUsers || []);
   }, [listOfUsers]);
-  //console.log(getUsers);
 
   function listFormatter() {
     const list = [];
@@ -48,8 +41,11 @@ const UsersList = () => {
   function onSelect(option) {
     const selectedUser = listOfUsers.find(user => user.id === option.value);
     setFilteredUsers([selectedUser]);
-    //console.log("event", option);
   }
+
+  const onReset = (event) => {
+    setFilteredUsers(listOfUsers);
+  };
 
   const CSVheaders = [
     {
@@ -66,18 +62,17 @@ const UsersList = () => {
   return (
     <div className="container py-5">
       <h2 className="text-center text-uppercase mb-5 ">Hotel employees</h2>
-
-      {/* <SearchBar users={getUsers}/> */}
-
-      <div className="dropdown-container">
-        <Select
-            placeholder="Select employee"
-            defaultValue={filteredUsers}
-            onChange={onSelect}
-            options={optionList}
-          />
+      <div className="row">
+        <div className="dropdown-container">
+          <Select
+              placeholder="Select employee"
+              defaultValue={filteredUsers}
+              onChange={onSelect}
+              options={optionList}
+            />
+          <Button variant="outlined" onClick={onReset}>Reset</Button>
+        </div>
       </div>
-
       <div className="row">
         {done ? (
           <div className="d-flex flex-wrap justify-content-between">
@@ -95,7 +90,7 @@ const UsersList = () => {
           </>
         )}
       </div>
-      
+
       <CSVLink data={filteredUsers} separator={";"} headers={CSVheaders}>
         Export to CSV
       </CSVLink>
