@@ -18,14 +18,13 @@ body {
   font-weight: 300 !important;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   background-color: #f1f5fb;
 }
 .card {
-  min-height: 200px;
+  min-height: 190px;
   background-color: #fff;
-  box-shadow: 0 2px 4px 0 #ccd0d9;
+  box-shadow: 0 3px 5px 0 #ccd0d9;
   cursor: pointer;
   will-change: transform;
   transition: all 0.3s ease;
@@ -106,5 +105,20 @@ ul {
 }
 
 .dropdown-container {
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 1.1em;
+}
+
+.inputSelect {
+  margin-right: 1.1em;
+  min-width: 300px;
+}
+
+.btnReset {
+  margin-left: 1.1em;
+}
+
+.btnCSV {
+  text-decoration: none;
 }

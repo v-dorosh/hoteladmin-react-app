@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="">
+        <div className="routesPaths">
           <Routes>
             <Route path="/" exact element={<UsersList />} />
             <Route path="/user/:id" element={<User />} />

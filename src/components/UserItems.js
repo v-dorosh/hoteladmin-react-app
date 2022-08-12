@@ -6,7 +6,7 @@ function UserItems({ user }) {
     <div className="col-md-3 mb-4">
       <div className="card p-3 justify-content-between">
         <div className="d-flex align-items-center ">
-          <FaUser size="20px" />
+          <FaUser size="22px" />
           <span className="px-2">{user.name}</span>
         </div>
         <button className="card-link">

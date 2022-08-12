@@ -5,7 +5,9 @@ import UserItems from "./UserItems";
 import ReactLoading from "react-loading";
 import { CSVLink } from "react-csv";
 import Select from "react-select";
+import IconButton from "@mui/material/IconButton";
 import Button from '@mui/material/Button';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 const UsersList = () => {
   const listOfUsers = useSelector((state) => state.users.users);
@@ -63,14 +65,19 @@ const UsersList = () => {
     <div className="container py-5">
       <h2 className="text-center text-uppercase mb-5 ">Hotel employees</h2>
       <div className="row">
-        <div className="dropdown-container">
+        <div className="dropdown-container container py-2">
           <Select
+              className="inputSelect"
+              width='300px'
+              menuColor='ocean'
               placeholder="Select employee"
               defaultValue={filteredUsers}
               onChange={onSelect}
               options={optionList}
             />
-          <Button variant="outlined" onClick={onReset}>Reset</Button>
+            <IconButton className="btnReset">
+              <RestartAltIcon color="secondary" onClick={onReset} />
+            </IconButton>
         </div>
       </div>
       <div className="row">
@@ -79,8 +86,8 @@ const UsersList = () => {
             <ReactLoading
               type={"cylon"}
               color={"#6667AB"}
-              height={100}
-              width={150}
+              height={90}
+              width={140}
             />
           </div>
         ) : (
@@ -90,10 +97,11 @@ const UsersList = () => {
           </>
         )}
       </div>
-
-      <CSVLink data={filteredUsers} separator={";"} headers={CSVheaders}>
-        Export to CSV
-      </CSVLink>
+      <Button className="btnCSV" variant="outlined">
+        <CSVLink data={filteredUsers} separator={";"} headers={CSVheaders}>
+          Export to CSV
+        </CSVLink>
+      </Button>
     </div>
   );
 };
