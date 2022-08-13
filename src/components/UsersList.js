@@ -23,6 +23,7 @@ const UsersList = () => {
     }, 1000);
     // eslint-disable-next-line
   }, []);
+
   useEffect(() => {
     setFilteredUsers(listOfUsers || []);
   }, [listOfUsers]);
@@ -68,6 +69,7 @@ const UsersList = () => {
         <div className="dropdown-container container py-2">
           <Select
               className="inputSelect"
+              title="select or filter hotel employee"
               width='300px'
               menuColor='ocean'
               placeholder="Select employee"
@@ -75,7 +77,7 @@ const UsersList = () => {
               onChange={onSelect}
               options={optionList}
             />
-            <IconButton className="btnReset">
+            <IconButton className="btnReset" title="reset">
               <RestartAltIcon color="secondary" onClick={onReset} />
             </IconButton>
         </div>
@@ -97,7 +99,7 @@ const UsersList = () => {
           </>
         )}
       </div>
-      <Button className="btnCSV" variant="outlined">
+      <Button className="btnCSV" variant="outlined" title="export list of employees into CSV">
         <CSVLink data={filteredUsers} separator={";"} headers={CSVheaders}>
           Export to CSV
         </CSVLink>
