@@ -77,8 +77,8 @@ const UsersList = () => {
               onChange={onSelect}
               options={optionList}
             />
-            <IconButton className="btnReset" title="reset">
-              <RestartAltIcon color="secondary" onClick={onReset} />
+            <IconButton onClick={onReset} className="btnReset" title="reset">
+              <RestartAltIcon color="secondary" />
             </IconButton>
         </div>
       </div>

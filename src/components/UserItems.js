@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function UserItems({ user }) {
   return (
-    <div className="col-md-3 mb-4">
+    <div className="col-md-3 mb-4" data-testid="card-item">
       <div className="card p-3 justify-content-between">
         <div className="d-flex align-items-center ">
           <FaUser size="22px" />

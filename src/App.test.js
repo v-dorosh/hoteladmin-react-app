@@ -4,16 +4,21 @@ import App from './App';
 import { Provider } from "react-redux";
 import store from "./store/store";
 import { useDispatch, useSelector } from "react-redux";
-import User from './components/User';
+import UserItems from './components/UserItems';
 import UsersList from './components/UsersList';
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from 'react-router-dom';
+import rootReducer from "./store/reducers";
+import { createStore } from "redux";
+import usersReducer from "./store/reducers/usersReducer";
+import { MemoryRouter } from 'react-router-dom';
+import { userList, userMock } from './utilities/test-mocks';
+
 
 
 // test('two plus two is four', () => {
 //   expect(2 + 2).toBe(4);
 // });
-
 
 // const MockUsersList = () => {
 //   return (
@@ -24,26 +29,57 @@ import { BrowserRouter } from 'react-router-dom';
 // }
 
 
-{/* <Provider>
-  test("render UsersList component", async () => {
-    render(<UsersList />);
+const initialState = {
+	users: {
+		users: userList,
+	},
+};
+
+const storeMock = createStore(
+  usersReducer,
+  initialState,
+);
+
+describe("UsersList", () => {
+	test("UsersList should render without errors", async () => {
+		const component = (
+			<Provider store={store}>
+				<UsersList />
+			</Provider>
+		);
+	
+		render(component);
+	});
+
+  it('Should find text "Hotel employees" in UsersList', async () => {
+		const component = (
+			<Provider store={store}>
+				<UsersList />
+			</Provider>
+		);
+
+		render(component);
+    const headingElement = screen.getByText(/Hotel employees/i);
+    expect(headingElement).toBeInTheDocument();
   });
-</Provider> */}
 
-// describe("UsersList", () => {
-//   it('should render users list item', async () => {
-//     render(<MockUsersList />);
-//     const headingElement = screen.getByText(/Hotel employees/i);
-//     expect(headingElement).toBeInTheDocument();
-//   });
+  it('should render multiple user items', async () => {
+		const component = (
+			<Provider store={storeMock}>
+				<UsersList />
+			</Provider>
+		);
+    render(component, {wrapper: MemoryRouter});
+    const userCardElements = await screen.findAllByTestId('card-item');
+    expect(userCardElements.length).toBe(10);
+  });
+});
 
-//   it('should render multiple user items', async () => {
-//     render(<MockUsersList />);
-//     const userCardElements = await screen.findAllByTestId(/card-item/i);
-//     expect(userCardElements.length).toBe(10);
-//   });
-
-// })
+describe('UserItems', () => {
+	it('Should render UserItems', () => {
+		render(<UserItems user={userMock} />, {wrapper: MemoryRouter});
+	});
+});
 
 // describe("UsersList",() => {
 //   it('should render same text passed into title group', async () => {
