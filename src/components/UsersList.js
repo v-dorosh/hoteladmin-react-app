@@ -70,6 +70,7 @@ const UsersList = () => {
           <Select
               className="inputSelect"
               title="select or filter hotel employee"
+              area-label="select or filter employee"
               width='300px'
               menuColor='ocean'
               placeholder="Select employee"
