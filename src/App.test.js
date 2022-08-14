@@ -1,32 +1,12 @@
 import { render, screen, act, fireEvent } from '@testing-library/react';
-import axios from 'axios';
-import App from './App';
 import { Provider } from "react-redux";
 import store from "./store/store";
-import { useDispatch, useSelector } from "react-redux";
 import UserItems from './components/UserItems';
 import UsersList from './components/UsersList';
-import userEvent from "@testing-library/user-event";
-import { BrowserRouter } from 'react-router-dom';
-import rootReducer from "./store/reducers";
 import { createStore } from "redux";
 import usersReducer from "./store/reducers/usersReducer";
 import { MemoryRouter } from 'react-router-dom';
 import { userList, userMock } from './utilities/test-mocks';
-
-
-
-// test('two plus two is four', () => {
-//   expect(2 + 2).toBe(4);
-// });
-
-// const MockUsersList = () => {
-//   return (
-//     <BrowserRouter>
-//       <UsersList />
-//     </BrowserRouter>
-//   )
-// }
 
 
 const initialState = {
